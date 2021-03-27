@@ -1,0 +1,17 @@
+{
+    "dev": {
+        "driver": "pg",
+        "user": "artcoin_dev",
+        "password": "artcoin_dev",
+        "database": "artcoin_dev"
+    },
+    "prod": {
+        "driver": "pg",
+        "database": "artcoin_prod",
+        "user": "artcoin",
+        "password": {
+            "ENV": "PGPASSWORD"
+        }
+    },
+    "sql-file": true
+}
