@@ -15,8 +15,14 @@ app.get('/prices/:name/:time', async (req, res) => {
     if (time == '1M') {
         let result = await pool.query(sql.getTokenPrices1M({ name }))
         res.json(result.rows)
+    } else if (time == '1W') {
+        let result = await pool.query(sql.getTokenPrices1W({ name }))
+        res.json(result.rows)
+    } else if (time == '1D') {
+        let result = await pool.query(sql.getTokenPrices1D({ name }))
+        res.json(result.rows)
     } else {
-        res.status(400).json({'error': 'time should be 1M'})
+        res.status(400).json({'error': 'time should be 1M, 1W or 1D'})
     }
 });
 
