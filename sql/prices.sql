@@ -24,4 +24,4 @@ where name = :name and time in (select min from a)
 -- getTokenPrices1D
 select * from prices
 where name = :name
-and date(time) > (current_date - interval '1 day');
+and time > (current_timestamp - interval '1 day');
